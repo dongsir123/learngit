@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name></display-name>
+  <listener>
+  	<listener-class>cn.tedu.listener.MyServletContextListener</listener-class>
+  </listener>
+  <!-- 全站过滤 -->
+  <filter>
+  	<filter-name>EncodeFilter</filter-name>
+  	<filter-class>cn.tedu.filter.EncodeFilter</filter-class>
+  	<init-param>
+  		<param-name>encode</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </filter>
+  <servlet>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>cn.tedu.web.RegistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>cn.tedu.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>User</servlet-name>
+    <servlet-class>cn.tedu.bean.User</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>cn.tedu.web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ValiImageServlet</servlet-name>
+    <servlet-class>cn.tedu.web.ValiImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxCheckUsernameServlet</servlet-name>
+    <servlet-class>cn.tedu.web.AjaxCheckUsernameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BackProdListServlet</servlet-name>
+    <servlet-class>cn.tedu.web.BackProdListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProdServiceImpl</servlet-name>
+    <servlet-class>cn.tedu.service.impl.ProdServiceImpl</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProdImgServlet</servlet-name>
+    <servlet-class>cn.tedu.web.ProdImgServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BackAjaxChangePnumServlet</servlet-name>
+    <servlet-class>cn.tedu.web.BackAjaxChangePnumServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BackProdDeleteServlet</servlet-name>
+    <servlet-class>cn.tedu.web.BackProdDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProdListServlet</servlet-name>
+    <servlet-class>cn.tedu.web.ProdListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProdInfoServlet</servlet-name>
+    <servlet-class>cn.tedu.web.ProdInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartAddServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartEditServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartEditServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderAddServlet</servlet-name>
+    <servlet-class>cn.tedu.web.OrderAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderListServlet</servlet-name>
+    <servlet-class>cn.tedu.web.OrderListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderDeleteServlet</servlet-name>
+    <servlet-class>cn.tedu.web.OrderDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SaleListServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.SaleListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SalesDownLoadServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.SalesDownLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>cn.tedu.web.PayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CallBackServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CallBackServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	<!-- 30天自动登陆 -->
+  	<filter>
+  		<filter-name>AutoLoginFilter</filter-name>
+  		<filter-class>cn.tedu.filter.AutoLoginFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>AutoLoginFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/servlet/RegistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>User</servlet-name>
+    <url-pattern>/servlet/User</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/servlet/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValiImageServlet</servlet-name>
+    <url-pattern>/servlet/ValiImageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxCheckUsernameServlet</servlet-name>
+    <url-pattern>/servlet/AjaxCheckUsernameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BackProdListServlet</servlet-name>
+    <url-pattern>/BackProdListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProdServiceImpl</servlet-name>
+    <url-pattern>/ProdServiceImpl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProdImgServlet</servlet-name>
+    <url-pattern>/ProdImgServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BackAjaxChangePnumServlet</servlet-name>
+    <url-pattern>/BackAjaxChangePnumServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BackProdDeleteServlet</servlet-name>
+    <url-pattern>/BackProdDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProdListServlet</servlet-name>
+    <url-pattern>/ProdListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProdInfoServlet</servlet-name>
+    <url-pattern>/ProdInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartAddServlet</servlet-name>
+    <url-pattern>/CartAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <url-pattern>/CartDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartEditServlet</servlet-name>
+    <url-pattern>/CartEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderAddServlet</servlet-name>
+    <url-pattern>/OrderAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderListServlet</servlet-name>
+    <url-pattern>/OrderListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderDeleteServlet</servlet-name>
+    <url-pattern>/OrderDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaleListServlet</servlet-name>
+    <url-pattern>/SaleListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SalesDownLoadServlet</servlet-name>
+    <url-pattern>/SalesDownLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/PayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CallBackServlet</servlet-name>
+    <url-pattern>/CallBackServlet</url-pattern>
+  </servlet-mapping>
+  <filter-mapping>
+  	<filter-name>EncodeFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
